@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghav - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,100&display=swap"
+        rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    background-image: url("https://th.bing.com/th/id/R.f1b40ff9617a4dcf9bfc115ef6f274b6?rik=Kyix4mwOg3byDg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fc%2f4%2f7%2f489350.jpg&ehk=ZRTQWSuOY0h3f9TmPWOIeKO67sElI4mrIQ1w8LNeY5M%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover; /* Makes sure the background image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed in place while scrolling */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #673ab7, #512da8);
+            color: white;
+            text-align: center;
+            animation: fadeIn 2s; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .hero a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #ff9d00;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero a:hover {
+            background-color: #e68a00;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: blueviolet;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: bisque;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: gainsboro;
+            font-size: 1.6rem;
+        }
+
+        main hr {
+            border: 0;
+            background: gainsboro;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .first {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 160px 0;
+        }
+
+        .first>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+        }
+
+        
+        .rightSection {
+            text-align: center; /* Center-align the content */
+        }
+
+        .rightSection img {
+            width: 250px; /* Adjust width as needed */
+            height: 250px; /* Adjust height to match width */
+            border-radius: 50%; /* Creates a circular shape */
+            object-fit: cover; /* Ensures the image covers the circle */
+            margin: 20px 0; /* Adjust margin as needed */
+        }
+
+        .description {
+            font-size: 2rem; /* Increase font size */
+            color: #fff; /* Set text color to white or any other color you prefer */
+            margin-top: 20px; /* Space between image and description */
+            padding: 0 20px; /* Padding to avoid text touching edges */
+            transition: font-size 0.3s ease, color 0.3s ease; /* Smooth transition */
+        }
+
+        .rightSection:hover .description {
+            font-size: 1.7rem; /* Increase font size on hover */
+            color: #ff9d00; /* Change color on hover */
+        }
+
+        .purpule {
+            color: rgb(106, 66, 138);
+        }
+
+        #element {
+            color: rgb(59, 168, 168);
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .secondSection h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: rgb(106, 66, 138);
+            position: relative;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .project {
+            position: relative;
+            width: 25%;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .project:hover img {
+            transform: scale(1.1);
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .project .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        .project:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h2 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9d00;
+        }
+
+        .overlay p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                width: 100%;
+            }
+        }
+         /* Footer Styles */
+         footer {
+            background-color: rgb(89, 57, 89);
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 10px 0;
+        }
+
+        .social-icons img {
+            width: 40px; /* Adjust the size of logos */
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        .large-logo {
+            max-width: 300px; /* Adjust this to your preferred size */
+            margin: 20px auto;
+            display: block;
+        }
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 100;
+            background-color: #ff9d00;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #e68a00;
+        }
+        .resume-button {
+    display: inline-block;
+    margin-top: 60px; /* Space above the button */
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.resume-button:hover {
+    background-color: #e68a00; /* Darker background on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.resume-button:active {
+    transform: translateY(0); /* Reset the lift effect when clicked */
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Raghav's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Contact me</a></li>
+                    <li><a href="/">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="first">
+            <div class="leftSection">
+                Hi, My name is <span class="purpule">Raghav</span>
+                <div>& I am a perfervid</div>
+                <span id="element"></span>
+                <a href="https://drive.google.com/file/d/19thrGLOZL9s2Nv4j7u8N6d1b22GeqTlY/view?usp=sharing" class="resume-button" target="_blank">Download My Resume</a> <!-- Update the URL here -->
+            </div>
+
+            <div class="rightSection">
+                <img src="images/raghav.jpg" alt="Show error">
+                <p class="description">I am a passionate developer with experience in both backend and frontend technologies. I enjoy building innovative solutions and tackling challenging problems.</p>
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection">
+            <h1>My Projects</h1>
+            <div class="projects">
+                <div class="project">
+                    <img src="images/project111.png" alt="Splitwise App Backend">
+                    <div class="overlay">
+                        <h2>Splitwise App Backend</h2>
+                        <p>Developed the backend for a Splitwise-like app using Spring Boot. This project handles expense splitting among groups and friends with features like user management, OAuth, JWT authentication, and database management.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/ums1.png" alt="Project 2">
+                    <div class="overlay">
+                        <h2>University Management System</h2>
+                        <p>Created a comprehensive University Management System using Java Swing. This application manages student and faculty information, course details, and other administrative processes with an easy-to-use graphical interface.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/project3.png" alt="Project 3">
+                    <div class="overlay">
+                        <h2>Online Job Portal</h2>
+                        <p>Developed an Online Job Portal using Servlet and JSP technologies. The portal provides job seekers with the ability to search and apply for jobs, while employers can post job listings, manage applications, and communicate with candidates.</p>
+                    </div>
+            
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p style="margin-bottom: 10px; font-size: 1.2rem;">Follow me on</p> <!-- Added text -->
+        <div class="social-icons">
+            <!-- Add logos using img tags -->
+            <a href="https://www.instagram.com/raghavmehta1912?igsh=MWp1YjdvOWppb28wYw==" target="_blank"><img src="images/R.png" alt="Instagram Logo"></a>
+            <a href="https://www.facebook.com/raghav.mehta.73345/" target="_blank"><img src="images/f.png" alt="Facebook Logo"></a>
+            <a href="https://x.com/yourprofile" target="_blank"><img src="images/x.jpeg" alt="Twitter Logo"></a>
+            <a href="https://x.com/RaghavM39528509" target="_blank"><img src="images/l.png" alt="LinkedIn Logo"></a>
+        </div>
+        <p>&copy; 2024 Raghav's Portfolio. All rights reserved.</p>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Backend Developer', 'Frontend Developer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
